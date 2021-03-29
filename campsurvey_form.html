@@ -1,0 +1,148 @@
+<!Doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title> freecodeCampSurvey_form</title>
+
+  <!--8888 styling the form with css 8888-->
+	<style type="text/css">
+
+     { margin: 0; padding: 0; }
+
+    body { 
+        background: url('camp.jpeg');
+        background-repeat:  no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 70px
+
+    }
+
+  h1{
+    text-align:center;
+     color: white}
+
+   /*p{color: white}*/
+   form{
+	  width:0 auto 
+	  padding:30px;
+    border: 1px solid #CCC;  /*have it inside a border outline*/
+    border-radius: 35px; 
+    margin: 10px
+    background-color:red;
+ 
+}
+   input[type=text],[type=number],select{
+      width:80%;
+      padding: 12px 20px;
+      margin: 8px 0;
+       border: 1px solid #ccc;
+       border-radius: 10px;
+       box-sizing: border-box;
+}
+  textarea{
+    width: 80%
+ }
+
+  input[type=submit] {
+  width: 80%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+	</style>
+
+  <!--88888 validate the form using javascript 888-->
+  <script type="text/javascript">
+    
+  </script>
+
+</head>
+
+<!-- 88888 create the form with html 8888-->
+<body>
+<h1> freeCodeCamp Survey Form</h1>
+<p style="text-align: center;color: white">Thank you for taking the time to help us improve the platform</p>
+
+<form>
+<dir>
+   <p>Name</p>
+     <input type="text" name="name" placeholder="Enter your name"><br>
+
+
+   <p>Email</p>
+     <input type="text" name="name" placeholder="Enter your email"><br>
+  
+
+  
+   <p>Age(optional)</p>
+     <input type="number" name="name" min="12" max="30" placeholder="Enter your age">
+</dir>
+
+
+<dir>
+   <p>Which option best describes your current role</p>
+      <select>
+        <option>Select current role</option>  	
+         <option>Full time learner</option>  
+          <option>Full time job</option>  
+           <option>Prefer not to say</option>  
+      </select>
+   </dir> 
+   
+   <dir>
+   	<p>Would yoy recomend freeCodeCamp to a friend</p>
+
+   	<input type="radio" name="recomend">
+   	 <label>Definitely</label> <br>
+
+   	  	<input type="radio" name="recomend">
+   	 <label>Maybe</label><br>
+
+   	 	<input type="radio" name="recomend">
+   	 <label>Not sure</label>
+   </dir> 
+
+
+<dir>
+	<p> What is your favorite feature of freeCodeCamp?</p>
+	 <select>
+        <option>Select an  option</option>  	
+         <option>Full time learner</option>  
+          <option>Full time job</option>  
+           <option>Prefer not to say</option>  
+      </select><br>
+    
+</dir>
+
+<dir>
+	<p>Whta would you like to see improved? (check all that apply)</p>
+	  <input type="checkbox" name="">
+	     <label for="h">Front-end Projects</label> <br>
+     <input type="checkbox" name="">
+         <label for="h">Back-end Projects</label><br>
+     <input type="checkbox" name="">
+         <label for="h">Data visualization</label><br>
+     <input type="checkbox" name="">
+         <label for="h">Gitter help rooms</label> <br>
+     <input type="checkbox" name="">
+         <label for="h">Challenges</label>  
+</dir>
+
+<dir>
+<p>Any comments or suggestions</p>
+<textarea placeholder="Enter your comment here.."></textarea>
+</dir>
+
+<dir>
+<input type="Submit" value="Submit"
+</dir>
+</form>
+</body>
+</html>

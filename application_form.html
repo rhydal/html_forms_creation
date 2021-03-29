@@ -1,0 +1,179 @@
+<!--
+This HTML project is a great way to test your skills and knowledge of designing forms and structuring a webpage. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>application_form</title>
+
+	<style>
+/* My css internal source code*/		
+ body {
+  font-family: 'Anaheim';  /*font style*/
+  font-size: 1.2em;
+}
+
+/* id element... the outer page ..a sheet itsef*/
+#outside {
+  background-color: lightgoldenrodyellow;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+/* header styling*/
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: capitalize; /*capitalize writing*/
+}
+
+/* the form styling*/
+form {
+  margin: 0 auto;   /* Just to center the form on the page */
+  width: 70%; /* To see the limits of the form */
+  padding: 1em;
+  border: 1px solid #CCC;  /*have it inside a border outline*/
+  border-radius: 1em; 
+}
+
+
+/*setting the actual form page dfft from d entire page*/
+#survey-form {
+  background-color: white;
+}
+
+/*grouping of field  and it legend style*/
+fieldset { 
+  border:1px solid lightgray;
+  margin: 10px;
+ }
+
+legend {font-weight: 700;}
+
+textarea {
+  /* To make sure that all text field have the same font settings
+     By default, textarea are set with a monospace font */
+   font: 1em sans-serif; 
+  border: 1px solid #999;  /* To harmonize the look & feel of text field border */
+  width: 400px;
+}
+
+ /* To give a little highligh on active elements */
+input:focus, textarea:focus {
+  border-color: OrangeRed;
+}
+
+#sumbitbutton{
+	/*display:flex;*/
+	/*padding: 5px*/
+	/*justify-content: center;*/
+	/*background-color: */
+}
+
+	</style>
+</head>
+
+
+
+<body id="outside">
+
+<form id="survey-form">
+<h1>Application For Permission to Date My Daughter</h1>
+<p><b>Note:</b> Form is to completed at least 21 days prior to date</p>
+  
+  <!--8888888 Personal information field 8888888-->
+<!-- The input placeholder attribute specifies a short hint that describes the expected value of an input field-->
+<fieldset><legend>Personal Details</legend>
+	<label for="name"> Name:</label>
+	  <input type="text" name="user_name" placeholder="enter your name here"><br><br>
+		
+    <label for="add"> Address:</label>
+      <input type="text" name="user_address" placeholder="enter address here"><br><br>
+  
+     <label for="email"> Email:</label>
+        <input type="text" name="user_email" placeholder="enter email  here"><br><br>
+
+   <!--we can use the min and max attributes to add numeric restrictions in the input field:-->
+
+     <label for="contact"> Phone Number:</label>
+        <input type="number"  name="user_contact" min="1" max="9"><br><br>
+
+     <label for="iq"> IQ:</label>
+        <input type="number" name="user_iq" min="-5" max="5"><br><br>
+
+     <label for="gender"> Gender:</label><br>
+
+        <input type="radio" id="male" name="gender" >
+  	       <label for="male">Male </label><br>
+  	    <input type="radio" id="female" name="gender">
+  	        <label for="female">Female </label><br>
+  	    <input type="radio" id="other" name="gender" >
+  	        <label for="other">Other </label> <br><br>
+
+    
+    <label for="date"> Date of Proposed Outing:</label>
+       <input type="text" id="date" name="date"><br>
+
+</fieldset>
+
+ <!--8888888 check list field 8888888-->
+
+<fieldset> <!--2nd field of survay-->
+	
+	<p>Check All That Apply</p>
+	  <input type="checkbox" name="">
+	     <label for="h">I have tattoos and/or piercings</label> <br>
+     <input type="checkbox" name="">
+         <label for="h">I am 2years older than your daughter</label><br>
+     <input type="checkbox" name="">
+         <label for="h">I own a panel van/V8 ute</label><br>
+     <input type="checkbox" name="">
+         <label for="h">I work full time</label> <br>
+     <input type="checkbox" name="">
+         <label for="h">I am from a rich family</label>
+</fieldset>
+
+
+<!--8888888 3rd field 8888888-->
+<fieldset>
+	<label>Political Persuation:</label>
+	<select> <!-- The <option> elements defines an option that can be selected.-->
+		<option>Left wing</option>
+		<option>Right wing</option>
+		<option>No wing</option>
+	</select> <br><br>
+
+	<label for="Education">Education Level Completed:</label>
+	   <select id="Education" name="edu">
+		 <option value="University">University</option>
+		 <option value="College">College</option>
+		 <option value="High School">High School</option>
+		 <option value="None">None</option>
+	  </select>
+</fieldset>
+
+
+
+<!--8888888 Essay field 8888888-->
+<fieldset>
+    <legend>Essay Section</legend>
+
+    <p> In 50 words explain why you want to date my daughter</p>
+        <textarea maxlength="50" placeholder="enter text here"></textarea>
+	
+   <p> Please upload contact details for 2 references</p>
+       <textarea  placeholder="enter text here"></textarea>
+
+   <p>Upload Police Clearance Certificate, Bank Statement and Medical Certificates here:</p>
+<!-- The multiple attribute specifies that the user is allowed to enter more than one value in an input field-->
+     <label for="files">Select files:</label>
+         <input type="file"  name="files" multiple><br>
+  
+  <p>To select multiple files, hold down the CTRL or SHIFT key while selecting.</p>
+</fieldset>
+
+  <input  id="sumbitbutton" type="submit" value="Submit Your Application">
+</form>
+</body>
+</html>
