@@ -1,8 +1,12 @@
 
-<!doctype html>
+
+<!Doctype html>
 <!-- 
  html creation for simple contact form with 3 text fields(Name, E-mail, Message) and 1 button( submit).
  Elements required - <form>,<label>,<input>,<button>
+  Ceterin field are made complulsory to fill..ie required
+  Validattion is set for such field using inbuilt validations
+  Javascript may be written where necessary for validation..ie not using inbuilt attributs
 -->
 
 <html>
@@ -12,23 +16,32 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
 <!-- style forms layout  using css -->
-    <style type="text/css">
+    <style>
       
-       body{
-        /* background-image: url('mail.png'); */
-        background-color:aliceblue;
-        /* background-attachment: fixed;  fix image..ie no scroling */
-         /* background-repeat: no-repeat;  */
-         /* background-size: cover; */
-      }
+       body {
+         background-image: url('https://img.freepik.com/free-photo/contact-icons-keyboard-button-online-contact-concept_2227-1391.jpg?size=626&ext=jpg');
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         background-size: cover;
+         color:springgreen;
+         font-size: larger;
+         font-weight: 500;
+         }
 
+       div{
+  height: 500px;
+}
        form{
-       margin: 0 auto;    /* Just to center the form on the page */
-       width: 50%; /* To see the width limits of the form */
-       padding: 1em;
-       border: 1px solid #CCC;  /*have it inside a border outline*/
-       border-radius: 2em; 
-       background-color: white; /* forms backgroud color*/
+       width: 0 auto;    /* Just to center the form on the page */
+       margin: 10%; /*To see the width limits of the form */
+       padding: 2px;
+       /* border: 1px solid #CCC;  have it inside a border outline */
+       /* border-radius: 4em;  */
+       /* border-width: 5px; */
+       /* border-bottom-right-radius:1px ; */
+       /* border-bottom-left-radius:1px ; */
+       margin-top: 2px;
+       margin-bottom: 0px;
         }
 
        h2{
@@ -37,89 +50,76 @@
          }
 
       ul{
-         list-style-type: circle;
+         list-style-type:decimal;
+         }
+         abbr{
+           color: red;
+         }
+         legend{
+           text-align: center;
+         }
+
+         input[type="text"],
+         input[type="email"]{
+           width:50%
          }
     </style>
+  
 
-<!-- validate forms using javascript -->
-    <script type="text/javascript"> 
-
-//// Defining a function to validate form 
-  function check_info() { 
-       // Retrieving the values of form elements 
-    var fname =document.getElementById("fname").value;
-    var lname =document.getElementById("lname").value;
-    var mail =document.getElementById("mail").value;
-    var contact =document.getElementById("contact").value;
-    var gender =document.getElementByName('gender').checked;
-    var status=document.getElementByName('status').checked;
-
-
-    if (fname=="" || lname==""|| mail=="" || contact=="") { 
-        alert("Please fill all fields.");
-        return false; 
-       }
-
-      //  if (gender=="") { 
-      // window.alert("Please select your gender.");  
-      // return false; 
-      //   } 
-
- return true; 
-    }   
-    
-</script> 
  </head>
   
 
  <body>
- <h2>Contact Form</h2>
-
-
- <form action="#" onsubmit="return check_info()" method="post" >
+   <div> <!--set up container for form-->
+   
+   <form action=""  method="" >
+     <h2>Contact Form</h2>
  <!--
  action specifies location for data to be sent to
  metho specifies which HTTP method to send data with (get/post)
  -->
 
  <!--fieldset: groups related elements in a form-->
-<fieldset>  
+ <fieldset>  
  <!--caption  for the fieldset uing legend-->
- <legend style="text-align: center;">Personal Information: </legend> 
+ <legend >Personal Information: </legend> 
 
 
 
 <!-- unordered list-->
   <ul >  
    <li>
-    <label> Full Name:</label><br>
-    <input type="text" id="name" name="user_name">
+    <label> Full Name <abbr title="This field is mandatory" aria-label="required">*</abbr> :</label>
+    <input type="text"  required>
   </li><br>
 
   <!-- gender grouping-->
   <li> 
-   <label> Gender </label>   
-  	<input type="radio"  name="gender" value="male" >
-  	 <label for="male">Male </label>
-  	<input type="radio"  name="gender" value="female">
-  	 <label for="female">Female </label>
+   <label> Gender:<abbr title="This field is mandatory" aria-label="required">*</abbr> </label>  
+   <!-- While only one radio button in a same-named group can be selected at a time,
+           and therefore only one radio button in a same-named group having the "required"
+           attribute suffices in making a selection a requirement --> 
+  	<input type="radio"  name="gender" value="male" id="m" required name="true">
+  	 <label for="m">Male </label>
+  	<input type="radio"  name="gender" value="female" id="f" required name="true">
+  	 <label for="f">Female </label>
   </li> <br>
 
   <li>
-    <label> Contact:</label><br>
-    <input type="text" id="contact" name="user_contact" maxlength="10">
+    <!-- validate by specifying the number of digits.maxlength -->
+    <label> Contact<abbr title="This field is mandatory" aria-label="required">*</abbr> :</label>
+    <input type="tel" id="contact" name="user_contact" maxlength="15" required>
   </li> <br>
 
   <li>
-    <label>E-mail:</label><br>
-    <input type="email" id="mail" name="user_email">
+    <label>E-mail<abbr title="This field is mandatory" aria-label="required">*</abbr> :</label>
+    <input type="email" id="mail" name="user_email" required>
   </li> <br>
   
 
-<!-- status grouping-->
+<!-- status grouping optional-->
   <li> 
-   <label> Status</label>   
-
+   <label> Status<i>(optional):</i></label>   
   	<input type="radio"  name="status" >
   	 <label for="single">Single </label>
   	<input type="radio" name="status">
@@ -129,18 +129,18 @@
   </li> <br>
 
 <li>
-<label>Country</label>
-        <select name="country">
-            <option>Select</option>
-            <option>Australia</option>
-            <option>Ghana</option>
-            <option>United States</option>
-            <option>United Kingdom</option>
+<label for="country" >Country<abbr title="This field is mandatory" aria-label="required">*</abbr> :</label>
+        <select id="country" required >
+            <option value="">Select</option>
+            <option value="Ast">Australia</option>
+            <option value="Gh">Ghana</option>
+            <option value="US">United States</option>
+            <option value="UK">United Kingdom</option>
         </select>
         </li><br>
 
 <li>
-  <label>Hobbies <i>(Optional)</i></label><br>
+  <label>Hobbies <i>(optional):</i></label>
         <!-- <div class="form-inline"> -->
             <label><input type="checkbox" name="hobbies[]" value="sports"> Sports</label>
             <label><input type="checkbox" name="hobbies[]" value="movies"> Movies</label>
@@ -157,5 +157,6 @@
  </fieldset>
 </form>
 
+</div>
  </body>
 </html>
