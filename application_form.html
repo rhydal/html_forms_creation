@@ -10,6 +10,7 @@ This HTML project is a great way to test your skills and knowledge of designing 
 	<style>
 /* My css internal source code*/		
  body {
+   background-image:url("https://cdn.pixabay.com/photo/2018/01/04/19/43/love-3061483__340.jpg");
   font-family: 'Anaheim';  /*font style*/
   font-size: 1.2em;
 }
@@ -49,7 +50,9 @@ fieldset {
   margin: 10px;
  }
 
-legend {font-weight: 700;}
+legend {
+  font-weight: 700;
+  color:royalblue;}
 
 textarea {
   /* To make sure that all text field have the same font settings
@@ -64,12 +67,6 @@ input:focus, textarea:focus {
   border-color: OrangeRed;
 }
 
-#sumbitbutton{
-	/*display:flex;*/
-	/*padding: 5px*/
-	/*justify-content: center;*/
-	/*background-color: */
-}
 
 	</style>
 </head>
@@ -137,9 +134,11 @@ input:focus, textarea:focus {
 
 <!--8888888 3rd field 8888888-->
 <fieldset>
+  <legend>Status Check</legend>
 	<label>Political Persuation:</label>
 	<select> <!-- The <option> elements defines an option that can be selected.-->
-		<option>Left wing</option>
+		<option>select</option>
+    <option>Left wing</option>
 		<option>Right wing</option>
 		<option>No wing</option>
 	</select> <br><br>
